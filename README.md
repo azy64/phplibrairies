@@ -9,7 +9,7 @@ in the following lines i will present you a sample(example) with slimphp framewo
 
 
 
-$app->map('/createemployee',function()use($app,$cntrl) {
+    $app->map('/createemployee',function()use($app,$cntrl) {
 
     $emp=new \models\Employes();
     $employeur=new \models\Employeurs();
@@ -48,4 +48,4 @@ $app->map('/createemployee',function()use($app,$cntrl) {
     $contenue=$app->twig->render("createemployee.twig",array("app"=>$app,"view"=>$view));
     echo $contenue;
     // return $app->render("index.php");
-})->via("GET","POST")->setName("createemployee");
+    })->via("GET","POST")->setName("createemployee");
