@@ -67,7 +67,14 @@ here is the simple way to use FileUpload , don't forget to include the specific 
             $file=new FileUpload($_FILES["getLogo"]);
 
             $emp=$form->getData($app->request->params());
+            /*
+            *we use upload method to upload file
+            *it takes one parameter :the path 
+            */
             $file->upload("./logo/".md5(time()));
+            /*
+            *getPathDest() return the new path where the file is saved
+            */
             $namef=$file->getPathDest();
             $emp->setLogo($namef);
            $cntrl->saveEmployeur($emp);
@@ -82,5 +89,4 @@ here is the simple way to use FileUpload , don't forget to include the specific 
     $view=$form->view();
     $contenue=$app->twig->render("createemployer.twig",array("app"=>$app,"view"=>$view));
     echo $contenue;
-    // return $app->render("index.php");
     })->via("GET","POST")->setName("createemployer");
