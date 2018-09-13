@@ -1,9 +1,11 @@
 # phplibrairies
 Php Libraries is a repository where you can find many utils php librairies , simple to use and can function on all php frameworks: Form Builder, FileUpload, BuildInstance, Fonction Form
 
-#How to use formBuilder
-the first you have to include the php file like:
-require "formBuilder.php";
+### How to use formBuilder
+the first step you have to include the php file like:
+
+    require "formBuilder.php"; or with a autoload php file.
+    
 and after you have to instance an object for this class
 in the following lines i will present you a sample(example) with slimphp framework but it's the same for all framework.
 
