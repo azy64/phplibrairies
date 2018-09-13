@@ -1,13 +1,13 @@
 # phplibrairies
-Php Libraries is a repository where you can find many useful php librairies , simple to use and can function on all php frameworks: Form Builder, FileUpload, BuildInstance, Fonction Form
+Php Libraries is a repository where you can find many useful php librairies , easy to use and can work on all php frameworks: Form Builder, FileUpload, BuildInstance, Fonction Form
 
 ### How to use formBuilder
 the first step you have to include the php file like:
 
     require "formBuilder.php"; or with autoload php file.
     
-and after you have to instance an object for this class
-in the following lines i will present you a sample(example) with slimphp framework but it's the same for all framework.
+then you have to create an object for its class.
+in the following lines i will present you a sample code(example) with slimphp framework and it can be used as well in other Php framework.
 
 
 
@@ -55,7 +55,7 @@ in the following lines i will present you a sample(example) with slimphp framewo
     
 ### How to use FileUpload
 
-here is the simple way to use FileUpload , don't forget to include the specific file with a require or autoload file
+here is the easiest way to use FileUpload but don't forget to include the specific file with a require or autoload file
 
 
     app->map('/createemployer', function ()use($app,$chk,$cntrl) {
