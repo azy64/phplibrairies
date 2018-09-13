@@ -52,6 +52,20 @@ in the following lines i will present you a sample code(example) with slimphp fr
     // return $app->render("index.php");
     })->via("GET","POST")->setName("createemployee");
     
+#### here is the code for the twig view
+
+    {% extends "dashbord.twig" %}
+    {% block title %}create new Employee{% endblock %}
+    {% block contenu %}
+        <div>
+            <h3>je suis la page create new Employee</h3>
+        </div>
+        <form action="{{ app.urlFor("createemployee") }}" method="post">
+            {{ view|raw }}
+            <button class="btn btn-primary">ENREGISTRER</button>
+        </form>
+    {% endblock %}
+    
     
 ### How to use FileUpload
 
