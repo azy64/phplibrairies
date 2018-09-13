@@ -1,5 +1,5 @@
 # phplibrairies
-Php Libraries is a repository where you can find many utils php librairies , simple to use and can function on all php frameworks: Form Builder, FileUpload, BuildInstance, Fonction Form
+Php Libraries is a repository where you can find many useful php librairies , simple to use and can function on all php frameworks: Form Builder, FileUpload, BuildInstance, Fonction Form
 
 ### How to use formBuilder
 the first step you have to include the php file like:
@@ -51,3 +51,36 @@ in the following lines i will present you a sample(example) with slimphp framewo
     echo $contenue;
     // return $app->render("index.php");
     })->via("GET","POST")->setName("createemployee");
+    
+    
+### How to use FileUpload
+
+here is the simple way to use FileUpload , don't forget to include the specific file with a require or autoload file
+
+
+    app->map('/createemployer', function ()use($app,$chk,$cntrl) {
+        $emp=new \models\Employeurs();
+
+        $form=new formBuilder($emp);
+        if($app->request->isPost()){
+            //var_dump($app->request->params());
+            $file=new FileUpload($_FILES["getLogo"]);
+
+            $emp=$form->getData($app->request->params());
+            $file->upload("./logo/".md5(time()));
+            $namef=$file->getPathDest();
+            $emp->setLogo($namef);
+           $cntrl->saveEmployeur($emp);
+
+        }
+        $form->add("denomination","text","Entreprise's Name")
+            ->add("logo","file","Logo")
+            ->add("adresse","text","Addresse")
+            ->add("position","text","Location")
+        ;
+
+    $view=$form->view();
+    $contenue=$app->twig->render("createemployer.twig",array("app"=>$app,"view"=>$view));
+    echo $contenue;
+    // return $app->render("index.php");
+    })->via("GET","POST")->setName("createemployer");
