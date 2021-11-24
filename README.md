@@ -9,7 +9,7 @@ the first step you have to include the php file like:
 then you have to create an object for its class.
 in the following lines i will present you a sample code(example) with slimphp framework and it can be used as well in other Php framework.
 
-
+```php
 
     $app->map('/createemployee',function()use($app,$cntrl) {
 
@@ -65,12 +65,13 @@ in the following lines i will present you a sample code(example) with slimphp fr
             <button class="btn btn-primary">ENREGISTRER</button>
         </form>
     {% endblock %}
-    
+ ```   
     
 ### How to use FileUpload
 
 here is the easiest way to use FileUpload but don't forget to include the specific file with a require or autoload file
 
+```php
 
     app->map('/createemployer', function ()use($app,$chk,$cntrl) {
         $emp=new \models\Employeurs();
@@ -104,3 +105,5 @@ here is the easiest way to use FileUpload but don't forget to include the specif
     $contenue=$app->twig->render("createemployer.twig",array("app"=>$app,"view"=>$view));
     echo $contenue;
     })->via("GET","POST")->setName("createemployer");
+    
+    ```
